@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Comic;
 
 class ComicController extends Controller
 {
@@ -14,7 +15,7 @@ class ComicController extends Controller
     }
 
     public function dettaglio($id) {
-        $comic = config('comics');
+        $comic = Comic::all();
         $data = [
             'risultato' => $comic[$id]
         ];
